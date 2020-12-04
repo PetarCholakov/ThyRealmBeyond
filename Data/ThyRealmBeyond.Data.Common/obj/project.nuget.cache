@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "ipsjnfcJxRta1vhFAtVERQv10Imw0JaPeL9RE1j5HkdFRJUJMzSyRbb7TxDbx7Cbano5qQM9NbInk1u3hEQG0A==",
+  "success": true,
+  "projectFilePath": "E:\\MyProject\\Data\\ThyRealmBeyond.Data.Common\\ThyRealmBeyond.Data.Common.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\chola\\.nuget\\packages\\stylecop.analyzers\\1.2.0-beta.205\\stylecop.analyzers.1.2.0-beta.205.nupkg.sha512",
+    "C:\\Users\\chola\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.205\\stylecop.analyzers.unstable.1.2.0.205.nupkg.sha512",
+    "C:\\Users\\chola\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}

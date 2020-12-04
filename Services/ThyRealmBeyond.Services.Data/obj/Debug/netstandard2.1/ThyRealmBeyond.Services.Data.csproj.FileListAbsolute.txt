@@ -1,0 +1,16 @@
+E:\MyProject\Services\ThyRealmBeyond.Services.Data\bin\Debug\netstandard2.1\ThyRealmBeyond.Services.Data.deps.json
+E:\MyProject\Services\ThyRealmBeyond.Services.Data\bin\Debug\netstandard2.1\ThyRealmBeyond.Services.Data.dll
+E:\MyProject\Services\ThyRealmBeyond.Services.Data\bin\Debug\netstandard2.1\ThyRealmBeyond.Services.Data.pdb
+E:\MyProject\Services\ThyRealmBeyond.Services.Data\bin\Debug\netstandard2.1\ThyRealmBeyond.Data.Common.dll
+E:\MyProject\Services\ThyRealmBeyond.Services.Data\bin\Debug\netstandard2.1\ThyRealmBeyond.Data.Models.dll
+E:\MyProject\Services\ThyRealmBeyond.Services.Data\bin\Debug\netstandard2.1\ThyRealmBeyond.Services.Mapping.dll
+E:\MyProject\Services\ThyRealmBeyond.Services.Data\bin\Debug\netstandard2.1\ThyRealmBeyond.Data.Common.pdb
+E:\MyProject\Services\ThyRealmBeyond.Services.Data\bin\Debug\netstandard2.1\ThyRealmBeyond.Data.Models.pdb
+E:\MyProject\Services\ThyRealmBeyond.Services.Data\bin\Debug\netstandard2.1\ThyRealmBeyond.Services.Mapping.pdb
+E:\MyProject\Services\ThyRealmBeyond.Services.Data\obj\Debug\netstandard2.1\ThyRealmBeyond.Services.Data.csprojAssemblyReference.cache
+E:\MyProject\Services\ThyRealmBeyond.Services.Data\obj\Debug\netstandard2.1\ThyRealmBeyond.Services.Data.AssemblyInfoInputs.cache
+E:\MyProject\Services\ThyRealmBeyond.Services.Data\obj\Debug\netstandard2.1\ThyRealmBeyond.Services.Data.AssemblyInfo.cs
+E:\MyProject\Services\ThyRealmBeyond.Services.Data\obj\Debug\netstandard2.1\ThyRealmBeyond.Services.Data.csproj.CoreCompileInputs.cache
+E:\MyProject\Services\ThyRealmBeyond.Services.Data\obj\Debug\netstandard2.1\ThyRealmBeyond.Services.Data.csproj.CopyComplete
+E:\MyProject\Services\ThyRealmBeyond.Services.Data\obj\Debug\netstandard2.1\ThyRealmBeyond.Services.Data.dll
+E:\MyProject\Services\ThyRealmBeyond.Services.Data\obj\Debug\netstandard2.1\ThyRealmBeyond.Services.Data.pdb

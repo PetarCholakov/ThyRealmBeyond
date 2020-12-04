@@ -1,0 +1,9 @@
+E:\MyProject\Services\ThyRealmBeyond.Services.Mapping\bin\Debug\netstandard2.1\ThyRealmBeyond.Services.Mapping.deps.json
+E:\MyProject\Services\ThyRealmBeyond.Services.Mapping\bin\Debug\netstandard2.1\ThyRealmBeyond.Services.Mapping.dll
+E:\MyProject\Services\ThyRealmBeyond.Services.Mapping\bin\Debug\netstandard2.1\ThyRealmBeyond.Services.Mapping.pdb
+E:\MyProject\Services\ThyRealmBeyond.Services.Mapping\obj\Debug\netstandard2.1\ThyRealmBeyond.Services.Mapping.csprojAssemblyReference.cache
+E:\MyProject\Services\ThyRealmBeyond.Services.Mapping\obj\Debug\netstandard2.1\ThyRealmBeyond.Services.Mapping.AssemblyInfoInputs.cache
+E:\MyProject\Services\ThyRealmBeyond.Services.Mapping\obj\Debug\netstandard2.1\ThyRealmBeyond.Services.Mapping.AssemblyInfo.cs
+E:\MyProject\Services\ThyRealmBeyond.Services.Mapping\obj\Debug\netstandard2.1\ThyRealmBeyond.Services.Mapping.csproj.CoreCompileInputs.cache
+E:\MyProject\Services\ThyRealmBeyond.Services.Mapping\obj\Debug\netstandard2.1\ThyRealmBeyond.Services.Mapping.dll
+E:\MyProject\Services\ThyRealmBeyond.Services.Mapping\obj\Debug\netstandard2.1\ThyRealmBeyond.Services.Mapping.pdb

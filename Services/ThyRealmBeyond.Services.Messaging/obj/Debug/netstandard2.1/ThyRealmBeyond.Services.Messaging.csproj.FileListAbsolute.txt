@@ -1,0 +1,9 @@
+E:\MyProject\Services\ThyRealmBeyond.Services.Messaging\bin\Debug\netstandard2.1\ThyRealmBeyond.Services.Messaging.deps.json
+E:\MyProject\Services\ThyRealmBeyond.Services.Messaging\bin\Debug\netstandard2.1\ThyRealmBeyond.Services.Messaging.dll
+E:\MyProject\Services\ThyRealmBeyond.Services.Messaging\bin\Debug\netstandard2.1\ThyRealmBeyond.Services.Messaging.pdb
+E:\MyProject\Services\ThyRealmBeyond.Services.Messaging\obj\Debug\netstandard2.1\ThyRealmBeyond.Services.Messaging.csprojAssemblyReference.cache
+E:\MyProject\Services\ThyRealmBeyond.Services.Messaging\obj\Debug\netstandard2.1\ThyRealmBeyond.Services.Messaging.AssemblyInfoInputs.cache
+E:\MyProject\Services\ThyRealmBeyond.Services.Messaging\obj\Debug\netstandard2.1\ThyRealmBeyond.Services.Messaging.AssemblyInfo.cs
+E:\MyProject\Services\ThyRealmBeyond.Services.Messaging\obj\Debug\netstandard2.1\ThyRealmBeyond.Services.Messaging.csproj.CoreCompileInputs.cache
+E:\MyProject\Services\ThyRealmBeyond.Services.Messaging\obj\Debug\netstandard2.1\ThyRealmBeyond.Services.Messaging.dll
+E:\MyProject\Services\ThyRealmBeyond.Services.Messaging\obj\Debug\netstandard2.1\ThyRealmBeyond.Services.Messaging.pdb

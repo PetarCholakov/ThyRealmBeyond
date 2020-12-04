@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "yD1VCjEqeLMkYurhuPHuu2+0QLAjEpfjFWHDIL90H9uXNSzd0Zo4tIRCS2BbiDGekfiG3FDo3o3tC3jfBoVXAw==",
+  "success": true,
+  "projectFilePath": "E:\\MyProject\\ThyRealmBeyond.Common\\ThyRealmBeyond.Common.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\chola\\.nuget\\packages\\stylecop.analyzers\\1.2.0-beta.205\\stylecop.analyzers.1.2.0-beta.205.nupkg.sha512",
+    "C:\\Users\\chola\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.205\\stylecop.analyzers.unstable.1.2.0.205.nupkg.sha512"
+  ],
+  "logs": []
+}
