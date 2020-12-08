@@ -2,9 +2,8 @@
 {
     using System.Linq;
 
-    using ThyRealmBeyond.Data.Common.Models;
-
     using Microsoft.EntityFrameworkCore;
+    using ThyRealmBeyond.Data.Common.Models;
 
     internal static class EntityIndexesConfiguration
     {

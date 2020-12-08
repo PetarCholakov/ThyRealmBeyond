@@ -3,9 +3,8 @@
     using System;
     using System.Threading.Tasks;
 
-    using ThyRealmBeyond.Data.Common;
-
     using Microsoft.EntityFrameworkCore;
+    using ThyRealmBeyond.Data.Common;
 
     public class DbQueryRunner : IDbQueryRunner
     {

@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ThyRealmBeyond.Web.ViewModels.Home
+﻿namespace ThyRealmBeyond.Web.ViewModels.Home
 {
-    class IndexViewModel
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    public class IndexViewModel
     {
+        public IEnumerable<IndexBlogPostViewModel> BlogPosts { get; set; }
     }
 }

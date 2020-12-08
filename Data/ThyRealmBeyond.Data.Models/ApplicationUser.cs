@@ -4,9 +4,8 @@ namespace ThyRealmBeyond.Data.Models
     using System;
     using System.Collections.Generic;
 
-    using ThyRealmBeyond.Data.Common.Models;
-
     using Microsoft.AspNetCore.Identity;
+    using ThyRealmBeyond.Data.Common.Models;
 
     public class ApplicationUser : IdentityUser, IAuditInfo, IDeletableEntity
     {
@@ -17,6 +16,7 @@ namespace ThyRealmBeyond.Data.Models
             this.Claims = new HashSet<IdentityUserClaim<string>>();
             this.Logins = new HashSet<IdentityUserLogin<string>>();
             this.BlogPosts = new HashSet<BlogPost>();
+            this.Characters = new HashSet<Character>();
         }
 
         // Audit info
@@ -36,5 +36,7 @@ namespace ThyRealmBeyond.Data.Models
         public virtual ICollection<IdentityUserLogin<string>> Logins { get; set; }
 
         public virtual ICollection<BlogPost> BlogPosts { get; set; }
+
+        public virtual ICollection<Character> Characters { get; set; }
     }
 }

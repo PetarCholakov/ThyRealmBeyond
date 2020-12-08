@@ -272,6 +272,68 @@ namespace ThyRealmBeyond.Data.Migrations
                     b.ToTable("BlogPosts");
                 });
 
+            modelBuilder.Entity("ThyRealmBeyond.Data.Models.Character", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("Age")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Appearance")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Capability")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Confidence")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nickname")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Origin")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Perception")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Sex")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Strength")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IsDeleted");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Characters");
+                });
+
             modelBuilder.Entity("ThyRealmBeyond.Data.Models.Setting", b =>
                 {
                     b.Property<int>("Id")
@@ -302,6 +364,86 @@ namespace ThyRealmBeyond.Data.Migrations
                     b.HasIndex("IsDeleted");
 
                     b.ToTable("Settings");
+                });
+
+            modelBuilder.Entity("ThyRealmBeyond.Data.Models.Specialty", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CharacterId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Points")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Type")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CharacterId");
+
+                    b.HasIndex("IsDeleted");
+
+                    b.ToTable("Specialties");
+                });
+
+            modelBuilder.Entity("ThyRealmBeyond.Data.Models.Weakness", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CharacterId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Points")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Type")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CharacterId");
+
+                    b.HasIndex("IsDeleted");
+
+                    b.ToTable("Weaknesses");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -358,8 +500,29 @@ namespace ThyRealmBeyond.Data.Migrations
             modelBuilder.Entity("ThyRealmBeyond.Data.Models.BlogPost", b =>
                 {
                     b.HasOne("ThyRealmBeyond.Data.Models.ApplicationUser", "Author")
-                        .WithMany()
+                        .WithMany("BlogPosts")
                         .HasForeignKey("AuthorId");
+                });
+
+            modelBuilder.Entity("ThyRealmBeyond.Data.Models.Character", b =>
+                {
+                    b.HasOne("ThyRealmBeyond.Data.Models.ApplicationUser", "User")
+                        .WithMany("Characters")
+                        .HasForeignKey("UserId");
+                });
+
+            modelBuilder.Entity("ThyRealmBeyond.Data.Models.Specialty", b =>
+                {
+                    b.HasOne("ThyRealmBeyond.Data.Models.Character", null)
+                        .WithMany("Specialties")
+                        .HasForeignKey("CharacterId");
+                });
+
+            modelBuilder.Entity("ThyRealmBeyond.Data.Models.Weakness", b =>
+                {
+                    b.HasOne("ThyRealmBeyond.Data.Models.Character", null)
+                        .WithMany("Weaknesses")
+                        .HasForeignKey("CharacterId");
                 });
 #pragma warning restore 612, 618
         }

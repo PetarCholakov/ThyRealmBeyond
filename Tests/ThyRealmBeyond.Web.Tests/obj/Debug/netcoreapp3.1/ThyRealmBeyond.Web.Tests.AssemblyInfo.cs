@@ -12,8 +12,8 @@ using System;
 using System.Reflection;
 
 [assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap4")]
-[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("ThyRealmBeyond.Data", "E:\\MyProject\\Data\\ThyRealmBeyond.Data", "ThyRealmBeyond.Data.csproj", "0")]
-[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("ThyRealmBeyond.Web", "E:\\MyProject\\Web\\ThyRealmBeyond.Web", "ThyRealmBeyond.Web.csproj", "0")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("ThyRealmBeyond.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "E:\\MyProject\\Data\\ThyRealmBeyond.Data", "ThyRealmBeyond.Data.csproj", "0")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("ThyRealmBeyond.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "E:\\MyProject\\Web\\ThyRealmBeyond.Web", "ThyRealmBeyond.Web.csproj", "0")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("ThyRealmBeyond.Web.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]

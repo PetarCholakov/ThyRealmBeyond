@@ -2,15 +2,31 @@
 {
     using System.Diagnostics;
 
-    using ThyRealmBeyond.Web.ViewModels;
-
     using Microsoft.AspNetCore.Mvc;
+
+    using ThyRealmBeyond.Services.Data;
+    using ThyRealmBeyond.Web.ViewModels;
+    using ThyRealmBeyond.Web.ViewModels.Home;
 
     public class HomeController : BaseController
     {
+        private readonly IBlogPostService blogPostService;
+
+        public HomeController(IBlogPostService blogPostService)
+        {
+            this.blogPostService = blogPostService;
+        }
+
         public IActionResult Index()
         {
-            return this.View();
+
+            var viewModel = new IndexViewModel
+            {
+                BlogPosts =
+                    this.blogPostService.GetAll<IndexBlogPostViewModel>(5),
+            };
+
+            return this.View(viewModel);
         }
 
         public IActionResult Privacy()

@@ -5,8 +5,8 @@
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
-    using ThyRealmBeyond.Data.Models;
 
+    using ThyRealmBeyond.Data.Models;
 
     public class BlogPostSeeder : ISeeder
     {

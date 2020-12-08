@@ -1,7 +1,11 @@
 ﻿namespace ThyRealmBeyond.Web.ViewModels.Administration.Dashboard
 {
+    using System.Collections.Generic;
+
+    using ThyRealmBeyond.Web.ViewModels.Home;
+
     public class IndexViewModel
     {
-        public int SettingsCount { get; set; }
+        public IEnumerable<IndexBlogPostViewModel> BlogPosts { get; set; }
     }
 }

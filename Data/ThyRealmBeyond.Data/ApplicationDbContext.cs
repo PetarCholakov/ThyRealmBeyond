@@ -28,6 +28,12 @@
 
         public DbSet<BlogPost> BlogPosts { get; set; }
 
+        public DbSet<Character> Characters { get; set; }
+
+        public DbSet<Specialty> Specialties { get; set; }
+
+        public DbSet<Weakness> Weaknesses { get; set; }
+
         public override int SaveChanges() => this.SaveChanges(true);
 
         public override int SaveChanges(bool acceptAllChangesOnSuccess)

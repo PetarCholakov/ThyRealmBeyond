@@ -23,4 +23,8 @@
     <ProjectReference Include="..\..\Services\ThyRealmBeyond.Services.Mapping\ThyRealmBeyond.Services.Mapping.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Administration\Dashboard\" />
+  </ItemGroup>
+
 </Project>

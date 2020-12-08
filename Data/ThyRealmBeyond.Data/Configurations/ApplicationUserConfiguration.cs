@@ -1,8 +1,8 @@
 ﻿namespace ThyRealmBeyond.Data.Configurations
 {
-    using ThyRealmBeyond.Data.Models;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
+    using ThyRealmBeyond.Data.Models;
 
     public class ApplicationUserConfiguration : IEntityTypeConfiguration<ApplicationUser>
     {

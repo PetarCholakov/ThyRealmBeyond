@@ -1,7 +1,6 @@
 ﻿namespace ThyRealmBeyond.Web.Areas.Administration.Controllers
 {
     using ThyRealmBeyond.Services.Data;
-    using ThyRealmBeyond.Web.ViewModels.Administration.Dashboard;
 
     using Microsoft.AspNetCore.Mvc;
 
@@ -16,8 +15,7 @@
 
         public IActionResult Index()
         {
-            var viewModel = new IndexViewModel { SettingsCount = this.settingsService.GetCount(), };
-            return this.View(viewModel);
+            return this.View();
         }
     }
 }
