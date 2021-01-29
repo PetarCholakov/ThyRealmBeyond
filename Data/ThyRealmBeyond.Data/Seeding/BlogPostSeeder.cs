@@ -8,7 +8,7 @@
 
     using ThyRealmBeyond.Data.Models;
 
-    public class BlogPostSeeder : ISeeder
+    internal class BlogPostSeeder : ISeeder
     {
         public async Task SeedAsync(ApplicationDbContext dbContext, IServiceProvider serviceProvider)
         {

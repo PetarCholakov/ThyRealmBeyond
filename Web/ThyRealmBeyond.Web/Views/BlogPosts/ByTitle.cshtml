@@ -4,11 +4,14 @@
     this.ViewData["Title"] = Model.Title;
 }
 
-
-<h1 class="display-3">@Model.Title</h1>
+<h2 class="display-3">@Model.Title</h2>
 <p class="lh-base">
     @Html.Raw(Model.SanitizedContent)
 </p>
+<ul class="list-inline list-unstyled">
+    <li><span><i class="fa fa-calendar-alt"></i> @Model.CreatedOn </span></li>
+</ul>
+<p class="text-right"><i class="fas fa-feather-alt"></i>@GlobalConstants.BlogPostAuthor</p>
 @if (this.User.IsInRole(GlobalConstants.AdministratorRoleName))
 {
     <li><i class="fa fa-pencil-alt"></i> <a href="/Administration/BlogPosts/Edit/@Model.Id">Edit</a></li>

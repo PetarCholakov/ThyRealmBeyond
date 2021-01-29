@@ -1,8 +1,8 @@
 ﻿namespace ThyRealmBeyond.Web.ViewModels.BlogPosts
 {
-    using Ganss.XSS;
     using System;
 
+    using Ganss.XSS;
     using ThyRealmBeyond.Data.Models;
     using ThyRealmBeyond.Services.Mapping;
 
