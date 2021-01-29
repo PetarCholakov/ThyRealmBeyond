@@ -9630,6 +9630,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "BuildBundlerMinifier >= 3.2.449",
+      "HtmlSanitizer >= 5.0.376",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 3.1.9",
       "Microsoft.AspNetCore.Identity.UI >= 3.1.9",
       "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation >= 3.1.9",
@@ -9717,6 +9718,10 @@
           "BuildBundlerMinifier": {
             "target": "Package",
             "version": "[3.2.449, )"
+          },
+          "HtmlSanitizer": {
+            "target": "Package",
+            "version": "[5.0.376, )"
           },
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
             "target": "Package",
