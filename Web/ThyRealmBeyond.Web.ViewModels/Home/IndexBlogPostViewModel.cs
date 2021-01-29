@@ -1,11 +1,14 @@
 ﻿namespace ThyRealmBeyond.Web.ViewModels.Home
 {
     using System;
+
     using ThyRealmBeyond.Data.Models;
     using ThyRealmBeyond.Services.Mapping;
 
     public class IndexBlogPostViewModel : IMapFrom<BlogPost>
     {
+        public int Id { get; set; }
+
         public string Title { get; set; }
 
         public string Content { get; set; }

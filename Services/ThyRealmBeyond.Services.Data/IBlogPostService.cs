@@ -6,6 +6,6 @@
     {
         IEnumerable<T> GetAll<T>(int? count);
 
-        T GetByTiTle<T>(string title); 
+        T GetByTitle<T>(string title);
     }
 }

@@ -30,11 +30,11 @@
             return query.To<T>().ToList();
         }
 
-        public T GetByTiTle<T>(string title)
+        public T GetByTitle<T>(string title)
         {
             var blogPost = this.blogPostRepository
                 .All()
-                .Where(bp => bp.Title == title)
+                .Where(bp => bp.Title.Replace(" ", "-") == title.Replace(" ", "-"))
                 .To<T>()
                 .FirstOrDefault();
 

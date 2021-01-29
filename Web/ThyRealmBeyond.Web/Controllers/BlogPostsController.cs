@@ -20,8 +20,14 @@
 
         public IActionResult ByTitle(string title)
         {
-            var viewModel = this.blogPostService.GetByTiTle<BlogPostViewModel>(title);
-            return this.View();
+            var viewModel = this.blogPostService.GetByTitle<BlogPostViewModel>(title);
+
+            if (viewModel == null)
+            {
+                return this.NotFound();
+            }
+
+            return this.View(viewModel);
         }
     }
 }
