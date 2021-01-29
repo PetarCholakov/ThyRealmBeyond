@@ -18,15 +18,15 @@
                     <img class="media-object" src="https://i.pinimg.com/originals/25/b8/88/25b88870762f1d06c8e169f095f636a8.png">
                 </a>
                 <div class="media-body">
-                    <h4 class="media-heading"><a href="@blogPost.Url">@blogPost.Title</a></h4>
-                    <p class="text-right">Emil Christoff</p>
+                    <h2 class="media-heading"><a href="@blogPost.Url">@blogPost.Title</a></h2>
                     <p>
-                        @blogPost.Content
+                        @blogPost.PreviewContent
                     </p>
                     <ul class="list-inline list-unstyled">
                         <li><span><i class="glyphicon glyphicon-calendar"></i> @blogPost.CreatedOn </span></li>
-                        <li>|</li>
                     </ul>
+                    <p class="text-right">@GlobalConstants.BlogPostAuthor</p>
+                    <p><a class="btn btn-info" href="@blogPost.Url"><i class="fa fa-plus"></i> Read More</a></p>
                 </div>
             </div>
         </div>

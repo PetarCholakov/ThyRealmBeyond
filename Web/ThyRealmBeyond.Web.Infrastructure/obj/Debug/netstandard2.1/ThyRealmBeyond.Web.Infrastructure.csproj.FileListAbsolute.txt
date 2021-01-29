@@ -6,3 +6,4 @@ E:\MyProject\Web\ThyRealmBeyond.Web.Infrastructure\obj\Debug\netstandard2.1\ThyR
 E:\MyProject\Web\ThyRealmBeyond.Web.Infrastructure\obj\Debug\netstandard2.1\ThyRealmBeyond.Web.Infrastructure.csproj.CoreCompileInputs.cache
 E:\MyProject\Web\ThyRealmBeyond.Web.Infrastructure\obj\Debug\netstandard2.1\ThyRealmBeyond.Web.Infrastructure.dll
 E:\MyProject\Web\ThyRealmBeyond.Web.Infrastructure\obj\Debug\netstandard2.1\ThyRealmBeyond.Web.Infrastructure.pdb
+E:\MyProject\Web\ThyRealmBeyond.Web.Infrastructure\obj\Debug\netstandard2.1\ThyRealmBeyond.Web.Infrastructure.csprojAssemblyReference.cache

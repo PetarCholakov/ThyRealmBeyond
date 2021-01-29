@@ -1,0 +1,15 @@
+﻿@model ThyRealmBeyond.Web.ViewModels.BlogPosts.BlogPostViewModel
+@using ThyRealmBeyond.Common
+@{
+    this.ViewData["Title"] = Model.Title;
+}
+
+
+<h1 class="display-3">@Model.Title</h1>
+<p class="lh-base">
+    @Html.Raw(Model.SanitizedContent)
+</p>
+@if (this.User.IsInRole(GlobalConstants.AdministratorRoleName))
+{
+    <li><i class="fa fa-pencil-alt"></i> <a href="/Administration/BlogPosts/Edit/@Model.Id">Edit</a></li>
+}

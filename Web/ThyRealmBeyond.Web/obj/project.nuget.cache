@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "Tij210ozfuWfTGBTZlyDHy47aOfdrfdwOpIyt8jhflmFOZfaS6Yt9LGa2W4O6GayATWP5sBhedNhN8DzVBJdww==",
+  "dgSpecHash": "ISfLhOyk5FpHgTC8VzaLQ97cnRFMtS4WGop7SZBjd9a8i1jPeVkAzPZJgsjAfoQOLRKlB2y6L9guzXh3NNnScQ==",
   "success": true,
   "projectFilePath": "E:\\MyProject\\Web\\ThyRealmBeyond.Web\\ThyRealmBeyond.Web.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\chola\\.nuget\\packages\\anglesharp\\0.14.0\\anglesharp.0.14.0.nupkg.sha512",
+    "C:\\Users\\chola\\.nuget\\packages\\anglesharp.css\\0.14.2\\anglesharp.css.0.14.2.nupkg.sha512",
     "C:\\Users\\chola\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\chola\\.nuget\\packages\\buildbundlerminifier\\3.2.449\\buildbundlerminifier.3.2.449.nupkg.sha512",
+    "C:\\Users\\chola\\.nuget\\packages\\htmlsanitizer\\5.0.376\\htmlsanitizer.5.0.376.nupkg.sha512",
     "C:\\Users\\chola\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.9\\microsoft.aspnetcore.cryptography.internal.3.1.9.nupkg.sha512",
     "C:\\Users\\chola\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.9\\microsoft.aspnetcore.cryptography.keyderivation.3.1.9.nupkg.sha512",
     "C:\\Users\\chola\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.entityframeworkcore\\3.1.9\\microsoft.aspnetcore.diagnostics.entityframeworkcore.3.1.9.nupkg.sha512",

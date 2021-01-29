@@ -10,7 +10,7 @@
 
         public string Content { get; set; }
 
-        public string PreviewContent => this.Content.Substring(0, 100);
+        public string PreviewContent => this.Content.Substring(0, 200);
 
         public virtual ApplicationUser Author { get; set; }
     }

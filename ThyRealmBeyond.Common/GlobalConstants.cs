@@ -5,5 +5,7 @@
         public const string SystemName = "ThyRealmBeyond";
 
         public const string AdministratorRoleName = "Administrator";
+
+        public const string BlogPostAuthor = "Emil Christoff";
     }
 }
