@@ -1,16 +1,15 @@
 ﻿namespace ThyRealmBeyond.Web.Areas.Administration.Controllers
 {
-    using System;
-    using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
 
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.EntityFrameworkCore;
+    using ThyRealmBeyond.Common;
     using ThyRealmBeyond.Data;
-    using ThyRealmBeyond.Data.Common.Repositories;
-    using ThyRealmBeyond.Data.Models;
 
+    [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
     [Area("Administration")]
     public class BlogPostsController : Controller
     {
@@ -23,7 +22,7 @@
 
         public async Task<IActionResult> Index()
         {
-            return this.View(await this.context.BlogPosts.OrderBy(x => x.CreatedOn).Take(10).ToListAsync());
+            return this.View(await this.context.BlogPosts.OrderByDescending(x => x.CreatedOn).Take(10).ToListAsync());
         }
     }
 }

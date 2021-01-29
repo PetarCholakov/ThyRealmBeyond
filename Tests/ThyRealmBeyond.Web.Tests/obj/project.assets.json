@@ -3582,7 +3582,6 @@
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
           "BuildBundlerMinifier": "3.2.449",
-          "HtmlSanitizer": "5.0.376",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "3.1.9",
           "Microsoft.AspNetCore.Identity.UI": "3.1.9",
           "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": "3.1.9",
