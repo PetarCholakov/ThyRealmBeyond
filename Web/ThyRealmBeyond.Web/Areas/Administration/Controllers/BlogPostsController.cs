@@ -22,7 +22,10 @@
 
         public async Task<IActionResult> Index()
         {
-            return this.View(await this.context.BlogPosts.OrderByDescending(x => x.CreatedOn).Take(10).ToListAsync());
+            return this.View(await this.context.BlogPosts
+                .OrderByDescending(x => x.CreatedOn)
+                .Take(10)
+                .ToListAsync());
         }
     }
 }
