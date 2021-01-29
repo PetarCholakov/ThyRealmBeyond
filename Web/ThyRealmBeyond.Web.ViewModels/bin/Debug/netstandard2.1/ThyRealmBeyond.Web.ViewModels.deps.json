@@ -9,12 +9,35 @@
     ".NETStandard,Version=v2.1/": {
       "ThyRealmBeyond.Web.ViewModels/1.0.0": {
         "dependencies": {
+          "HtmlSanitizer": "5.0.376",
           "StyleCop.Analyzers": "1.2.0-beta.205",
           "ThyRealmBeyond.Data.Models": "1.0.0",
           "ThyRealmBeyond.Services.Mapping": "1.0.0"
         },
         "runtime": {
           "ThyRealmBeyond.Web.ViewModels.dll": {}
+        }
+      },
+      "AngleSharp/0.14.0": {
+        "dependencies": {
+          "System.Text.Encoding.CodePages": "4.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AngleSharp.dll": {
+            "assemblyVersion": "0.14.0.0",
+            "fileVersion": "0.14.0.0"
+          }
+        }
+      },
+      "AngleSharp.Css/0.14.2": {
+        "dependencies": {
+          "AngleSharp": "0.14.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AngleSharp.Css.dll": {
+            "assemblyVersion": "0.14.2.0",
+            "fileVersion": "0.14.2.0"
+          }
         }
       },
       "AutoMapper/10.1.1": {
@@ -26,6 +49,18 @@
           "lib/netstandard2.0/AutoMapper.dll": {
             "assemblyVersion": "10.0.0.0",
             "fileVersion": "10.1.1.0"
+          }
+        }
+      },
+      "HtmlSanitizer/5.0.376": {
+        "dependencies": {
+          "AngleSharp": "0.14.0",
+          "AngleSharp.Css": "0.14.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/HtmlSanitizer.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.376.0"
           }
         }
       },
@@ -351,6 +386,17 @@
           }
         }
       },
+      "System.Text.Encoding.CodePages/4.5.0": {
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "4.7.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Text.Encoding.CodePages.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.26515.6"
+          }
+        }
+      },
       "System.Threading.Tasks.Extensions/4.5.4": {
         "dependencies": {
           "System.Runtime.CompilerServices.Unsafe": "4.7.1"
@@ -395,12 +441,33 @@
       "serviceable": false,
       "sha512": ""
     },
+    "AngleSharp/0.14.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-34w9I7nyszfEYBY8g7T3B0AtWlOivNh+QoWc3KECRwbmcNyqWmb4huihtmpH2Ds7rIRRHMMPv9yfPBxxjBn03g==",
+      "path": "anglesharp/0.14.0",
+      "hashPath": "anglesharp.0.14.0.nupkg.sha512"
+    },
+    "AngleSharp.Css/0.14.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2USpPu9V/+1iBwHpanBsqr1eR+3vxKe19ZsnejbZfxNOadsMvUUkJ+0OjMsQmT0ExSW4vjCKXq9K/JWv0ie8JQ==",
+      "path": "anglesharp.css/0.14.2",
+      "hashPath": "anglesharp.css.0.14.2.nupkg.sha512"
+    },
     "AutoMapper/10.1.1": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-uMgbqOdu9ZG5cIOty0C85hzzayBH2i9BthnS5FlMqKtMSHDv4ts81a2jS1VFaDBVhlBeIqJ/kQKjQY95BZde9w==",
       "path": "automapper/10.1.1",
       "hashPath": "automapper.10.1.1.nupkg.sha512"
+    },
+    "HtmlSanitizer/5.0.376": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Jj2fn4g7w/Q4ljW/qzhhggzodmvURMpBSs6reCOZB7vo8bmgb4F6kSLFoFF7sAIPcYuhTsEqBtr3//1oF0VSDg==",
+      "path": "htmlsanitizer/5.0.376",
+      "hashPath": "htmlsanitizer.5.0.376.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Cryptography.Internal/3.1.9": {
       "type": "package",
@@ -632,6 +699,13 @@
       "sha512": "sha512-zOHkQmzPCn5zm/BH+cxC1XbUS3P4Yoi3xzW7eRgVpDR2tPGSzyMZ17Ig1iRkfJuY0nhxkQQde8pgePNiA7z7TQ==",
       "path": "system.runtime.compilerservices.unsafe/4.7.1",
       "hashPath": "system.runtime.compilerservices.unsafe.4.7.1.nupkg.sha512"
+    },
+    "System.Text.Encoding.CodePages/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-S0wEUiKcLvRlkFUXca8uio1UQ5bYQzYgOmOKtCqaBQC3GR9AJjh43otcM32IGsAyvadFTaAMw9Irm6dS4Evfng==",
+      "path": "system.text.encoding.codepages/4.5.0",
+      "hashPath": "system.text.encoding.codepages.4.5.0.nupkg.sha512"
     },
     "System.Threading.Tasks.Extensions/4.5.4": {
       "type": "package",
