@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ThyRealmBeyond.Data.Models.Enums
+﻿namespace ThyRealmBeyond.Data.Models.Enums
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
     public enum Origin
     {
         OutsideKnownRealm = 0,

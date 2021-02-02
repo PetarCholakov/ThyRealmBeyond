@@ -19,11 +19,10 @@
 
         public IActionResult Index()
         {
-
             var viewModel = new IndexViewModel
             {
                 BlogPosts =
-                    this.blogPostService.GetAll<IndexBlogPostViewModel>(5),
+                    this.blogPostService.GetAll<IndexBlogPostViewModel>(),
             };
 
             return this.View(viewModel);

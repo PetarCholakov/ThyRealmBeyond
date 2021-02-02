@@ -1,9 +1,8 @@
 ﻿namespace ThyRealmBeyond.Web.ViewModels.Settings
 {
+    using AutoMapper;
     using ThyRealmBeyond.Data.Models;
     using ThyRealmBeyond.Services.Mapping;
-
-    using AutoMapper;
 
     public class SettingViewModel : IMapFrom<Setting>, IHaveCustomMappings
     {

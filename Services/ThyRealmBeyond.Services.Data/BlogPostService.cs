@@ -4,7 +4,9 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
+    using System.Threading.Tasks;
 
+    using Microsoft.AspNetCore.Identity;
     using ThyRealmBeyond.Data.Common.Repositories;
     using ThyRealmBeyond.Data.Models;
     using ThyRealmBeyond.Services.Mapping;
@@ -18,16 +20,37 @@
             this.blogPostRepository = blogPostRepository;
         }
 
-        public IEnumerable<T> GetAll<T>(int? count = null)
+        public async Task<int> CreateAsync(string title, string content, string userId)
+        {
+            var blogPost = new BlogPost
+            {
+                Title = title,
+                Content = content,
+                UserId = userId,
+            };
+
+            await this.blogPostRepository.AddAsync(blogPost);
+            await this.blogPostRepository.SaveChangesAsync();
+
+            return blogPost.Id;
+        }
+
+        public IEnumerable<T> GetAll<T>()
         {
             IQueryable<BlogPost> query =
                 this.blogPostRepository.All().OrderBy(x => x.CreatedOn);
-            if (count.HasValue)
-            {
-                query = query.Take(count.Value);
-            }
-
             return query.To<T>().ToList();
+        }
+
+        public T GetById<T>(int id)
+        {
+            var blogPost = this.blogPostRepository
+                .All()
+                .Where(bp => bp.Id == id)
+                .To<T>()
+                .FirstOrDefault();
+
+            return blogPost;
         }
 
         public T GetByTitle<T>(string title)
