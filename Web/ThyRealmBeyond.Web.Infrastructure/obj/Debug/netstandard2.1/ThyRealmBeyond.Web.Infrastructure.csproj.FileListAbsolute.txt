@@ -1,9 +1,0 @@
-E:\MyProject\Web\ThyRealmBeyond.Web.Infrastructure\bin\Debug\netstandard2.1\ThyRealmBeyond.Web.Infrastructure.deps.json
-E:\MyProject\Web\ThyRealmBeyond.Web.Infrastructure\bin\Debug\netstandard2.1\ThyRealmBeyond.Web.Infrastructure.dll
-E:\MyProject\Web\ThyRealmBeyond.Web.Infrastructure\bin\Debug\netstandard2.1\ThyRealmBeyond.Web.Infrastructure.pdb
-E:\MyProject\Web\ThyRealmBeyond.Web.Infrastructure\obj\Debug\netstandard2.1\ThyRealmBeyond.Web.Infrastructure.AssemblyInfoInputs.cache
-E:\MyProject\Web\ThyRealmBeyond.Web.Infrastructure\obj\Debug\netstandard2.1\ThyRealmBeyond.Web.Infrastructure.AssemblyInfo.cs
-E:\MyProject\Web\ThyRealmBeyond.Web.Infrastructure\obj\Debug\netstandard2.1\ThyRealmBeyond.Web.Infrastructure.csproj.CoreCompileInputs.cache
-E:\MyProject\Web\ThyRealmBeyond.Web.Infrastructure\obj\Debug\netstandard2.1\ThyRealmBeyond.Web.Infrastructure.dll
-E:\MyProject\Web\ThyRealmBeyond.Web.Infrastructure\obj\Debug\netstandard2.1\ThyRealmBeyond.Web.Infrastructure.pdb
-E:\MyProject\Web\ThyRealmBeyond.Web.Infrastructure\obj\Debug\netstandard2.1\ThyRealmBeyond.Web.Infrastructure.csprojAssemblyReference.cache
