@@ -19,7 +19,6 @@
 
         public IActionResult Index()
         {
-
             var viewModel = new IndexViewModel
             {
                 BlogPosts =

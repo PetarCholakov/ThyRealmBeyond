@@ -1,6 +1,6 @@
 ﻿namespace ThyRealmBeyond.Data.Models
 {
-    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
 
     using ThyRealmBeyond.Data.Common.Models;
 
@@ -12,6 +12,9 @@
 
         public string PreviewContent => this.Content.Substring(0, 200);
 
-        public virtual ApplicationUser Author { get; set; }
+        [Required]
+        public string UserId { get; set; }
+
+        public virtual ApplicationUser User { get; set; }
     }
 }

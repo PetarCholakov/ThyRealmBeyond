@@ -1,16 +1,15 @@
 ﻿namespace ThyRealmBeyond.Web.Areas.Administration.Controllers
 {
-    using ThyRealmBeyond.Services.Data;
-
     using Microsoft.AspNetCore.Mvc;
+    using ThyRealmBeyond.Services.Data;
 
     public class DashboardController : AdministrationController
     {
-        private readonly ISettingsService settingsService;
+        private readonly IBlogPostService blogPostService;
 
-        public DashboardController(ISettingsService settingsService)
+        public DashboardController(IBlogPostService blogPostService)
         {
-            this.settingsService = settingsService;
+            this.blogPostService = blogPostService;
         }
 
         public IActionResult Index()

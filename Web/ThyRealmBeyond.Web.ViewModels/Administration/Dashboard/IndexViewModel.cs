@@ -6,6 +6,5 @@
 
     public class IndexViewModel
     {
-        public IEnumerable<IndexBlogPostViewModel> BlogPosts { get; set; }
     }
 }

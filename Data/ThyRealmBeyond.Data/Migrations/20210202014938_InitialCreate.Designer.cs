@@ -10,8 +10,8 @@ using ThyRealmBeyond.Data;
 namespace ThyRealmBeyond.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201207151920_AddCharacterModelWithSpecialtiesAndWeaknesses")]
-    partial class AddCharacterModelWithSpecialtiesAndWeaknesses
+    [Migration("20210202014938_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -252,9 +252,6 @@ namespace ThyRealmBeyond.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("AuthorId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<string>("Content")
                         .HasColumnType("nvarchar(max)");
 
@@ -267,9 +264,13 @@ namespace ThyRealmBeyond.Data.Migrations
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("AuthorId");
+                    b.HasIndex("UserId");
 
                     b.ToTable("BlogPosts");
                 });
@@ -325,6 +326,7 @@ namespace ThyRealmBeyond.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
@@ -405,7 +407,7 @@ namespace ThyRealmBeyond.Data.Migrations
 
                     b.HasIndex("IsDeleted");
 
-                    b.ToTable("Specialty");
+                    b.ToTable("Specialties");
                 });
 
             modelBuilder.Entity("ThyRealmBeyond.Data.Models.Weakness", b =>
@@ -445,7 +447,7 @@ namespace ThyRealmBeyond.Data.Migrations
 
                     b.HasIndex("IsDeleted");
 
-                    b.ToTable("Weakness");
+                    b.ToTable("Weaknesses");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -501,16 +503,20 @@ namespace ThyRealmBeyond.Data.Migrations
 
             modelBuilder.Entity("ThyRealmBeyond.Data.Models.BlogPost", b =>
                 {
-                    b.HasOne("ThyRealmBeyond.Data.Models.ApplicationUser", "Author")
+                    b.HasOne("ThyRealmBeyond.Data.Models.ApplicationUser", "User")
                         .WithMany("BlogPosts")
-                        .HasForeignKey("AuthorId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("ThyRealmBeyond.Data.Models.Character", b =>
                 {
                     b.HasOne("ThyRealmBeyond.Data.Models.ApplicationUser", "User")
                         .WithMany("Characters")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("ThyRealmBeyond.Data.Models.Specialty", b =>
