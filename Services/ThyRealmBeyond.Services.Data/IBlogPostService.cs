@@ -7,7 +7,7 @@
     {
         Task<int> CreateAsync(string title, string content, string userId);
 
-        IEnumerable<T> GetAll<T>(int? count);
+        IEnumerable<T> GetAll<T>();
 
         T GetByTitle<T>(string title);
 

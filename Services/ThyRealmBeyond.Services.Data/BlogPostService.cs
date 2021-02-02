@@ -35,15 +35,10 @@
             return blogPost.Id;
         }
 
-        public IEnumerable<T> GetAll<T>(int? count = null)
+        public IEnumerable<T> GetAll<T>()
         {
             IQueryable<BlogPost> query =
                 this.blogPostRepository.All().OrderBy(x => x.CreatedOn);
-            if (count.HasValue)
-            {
-                query = query.Take(count.Value);
-            }
-
             return query.To<T>().ToList();
         }
 
