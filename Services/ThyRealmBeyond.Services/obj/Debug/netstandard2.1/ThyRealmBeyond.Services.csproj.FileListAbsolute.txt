@@ -1,9 +1,0 @@
-E:\MyProject\Services\ThyRealmBeyond.Services\bin\Debug\netstandard2.1\ThyRealmBeyond.Services.deps.json
-E:\MyProject\Services\ThyRealmBeyond.Services\bin\Debug\netstandard2.1\ThyRealmBeyond.Services.dll
-E:\MyProject\Services\ThyRealmBeyond.Services\bin\Debug\netstandard2.1\ThyRealmBeyond.Services.pdb
-E:\MyProject\Services\ThyRealmBeyond.Services\obj\Debug\netstandard2.1\ThyRealmBeyond.Services.csprojAssemblyReference.cache
-E:\MyProject\Services\ThyRealmBeyond.Services\obj\Debug\netstandard2.1\ThyRealmBeyond.Services.AssemblyInfoInputs.cache
-E:\MyProject\Services\ThyRealmBeyond.Services\obj\Debug\netstandard2.1\ThyRealmBeyond.Services.AssemblyInfo.cs
-E:\MyProject\Services\ThyRealmBeyond.Services\obj\Debug\netstandard2.1\ThyRealmBeyond.Services.csproj.CoreCompileInputs.cache
-E:\MyProject\Services\ThyRealmBeyond.Services\obj\Debug\netstandard2.1\ThyRealmBeyond.Services.dll
-E:\MyProject\Services\ThyRealmBeyond.Services\obj\Debug\netstandard2.1\ThyRealmBeyond.Services.pdb
