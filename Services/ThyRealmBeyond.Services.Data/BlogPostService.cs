@@ -7,6 +7,7 @@
     using System.Threading.Tasks;
 
     using Microsoft.AspNetCore.Identity;
+    using Microsoft.EntityFrameworkCore;
     using ThyRealmBeyond.Data.Common.Repositories;
     using ThyRealmBeyond.Data.Models;
     using ThyRealmBeyond.Services.Mapping;
@@ -35,22 +36,32 @@
             return blogPost.Id;
         }
 
+        public async Task<int> UpdateAsync(int id, string title, string content)
+        {
+            var modelToUpdate = await this.GetByIdAsync<BlogPost>(id);
+            modelToUpdate.Title = title;
+            modelToUpdate.Content = content;
+
+            this.blogPostRepository.Update(modelToUpdate);
+            await this.blogPostRepository.SaveChangesAsync();
+
+            return modelToUpdate.Id;
+        }
+
+        public async Task<BlogPost> GetByIdAsync<T>(int? id)
+        {
+            var blogPost = await this.blogPostRepository
+                .All()
+                .FirstOrDefaultAsync(bp => bp.Id == id);
+
+            return blogPost;
+        }
+
         public IEnumerable<T> GetAll<T>()
         {
             IQueryable<BlogPost> query =
-                this.blogPostRepository.All().OrderBy(x => x.CreatedOn);
+                this.blogPostRepository.All().OrderByDescending(x => x.CreatedOn);
             return query.To<T>().ToList();
-        }
-
-        public T GetById<T>(int id)
-        {
-            var blogPost = this.blogPostRepository
-                .All()
-                .Where(bp => bp.Id == id)
-                .To<T>()
-                .FirstOrDefault();
-
-            return blogPost;
         }
 
         public T GetByTitle<T>(string title)

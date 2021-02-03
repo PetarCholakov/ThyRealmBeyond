@@ -3,14 +3,14 @@
     using System.Linq;
     using System.Threading.Tasks;
 
+    using AutoMapper;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.EntityFrameworkCore;
-    using ThyRealmBeyond.Data;
     using ThyRealmBeyond.Data.Common.Repositories;
     using ThyRealmBeyond.Data.Models;
     using ThyRealmBeyond.Services.Data;
-    using ThyRealmBeyond.Web.ViewModels.BlogPosts;
+    using ThyRealmBeyond.Web.ViewModels.Administration.BlogPosts;
 
     [Area("Administration")]
     public class BlogPostsController : AdministrationController
@@ -26,6 +26,8 @@
             this.blogPostService = blogPostService;
         }
 
+        // GET: Administration/BlogPosts
+        // TODO: disconnect controller from repository
         public async Task<IActionResult> Index()
         {
             var result = await this.repository
@@ -35,8 +37,40 @@
             return this.View(result);
         }
 
-        public IActionResult Create() => this.View();
+        // GET: Administration/BlogPosts/Details/id
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return this.NotFound();
+            }
 
+            var blogPost = await this.blogPostService.GetByIdAsync<BlogPost>(id);
+
+            if (blogPost == null)
+            {
+                return this.NotFound();
+            }
+
+            var viewModel = new BlogPostViewModel
+            {
+                Id = blogPost.Id,
+                Title = blogPost.Title,
+                Content = blogPost.Content,
+                CreatedOn = blogPost.CreatedOn,
+                ModifiedOn = blogPost.ModifiedOn,
+            };
+
+            return this.View(viewModel);
+        }
+
+        // GET: Administration/BlogPosts/Create
+        public IActionResult Create()
+        {
+            return this.View();
+        }
+
+        // POST: Administration/BlogPosts/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(BlogPostCreateInputModel inputModel)
@@ -50,6 +84,61 @@
             }
 
             return this.View(inputModel);
+        }
+
+        // GET: Administration/BlogPorst/Edit/id
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
+                return this.NotFound();
+            }
+
+            var blogPost = await this.blogPostService.GetByIdAsync<BlogPost>(id);
+
+            if (blogPost == null)
+            {
+                return this.NotFound();
+            }
+
+            var viewModel = new BlogPostEditInputModel
+            {
+                Title = blogPost.Title,
+                Content = blogPost.Content,
+            };
+
+            return this.View(viewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, BlogPostEditInputModel inputModel)
+        {
+            if (id != inputModel.Id)
+            {
+                return this.NotFound();
+            }
+
+            if (this.ModelState.IsValid)
+            {
+                try
+                {
+                    await this.blogPostService.UpdateAsync(inputModel.Id, inputModel.Title, inputModel.Content);
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (this.blogPostService.GetByIdAsync<BlogPost>(inputModel.Id) == null)
+                    {
+                        return this.NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+            }
+
+            return this.RedirectToAction(nameof(this.Index));
         }
     }
 }

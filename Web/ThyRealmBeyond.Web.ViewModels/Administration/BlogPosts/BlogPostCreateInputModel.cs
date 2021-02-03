@@ -1,6 +1,7 @@
 ﻿namespace ThyRealmBeyond.Web.ViewModels.Administration.BlogPosts
 {
     using System.ComponentModel.DataAnnotations;
+
     using ThyRealmBeyond.Data.Models;
     using ThyRealmBeyond.Services.Mapping;
 
@@ -11,8 +12,5 @@
 
         [Required]
         public string Content { get; set; }
-
-        [Required]
-        public string UserId { get; set; }
     }
 }

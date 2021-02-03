@@ -3,6 +3,8 @@
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
+    using ThyRealmBeyond.Data.Models;
+
     public interface IBlogPostService
     {
         Task<int> CreateAsync(string title, string content, string userId);
@@ -11,6 +13,8 @@
 
         T GetByTitle<T>(string title);
 
-        T GetById<T>(int id);
+        Task<BlogPost> GetByIdAsync<T>(int? id);
+
+        Task<int> UpdateAsync(int id, string title, string content);
     }
 }
