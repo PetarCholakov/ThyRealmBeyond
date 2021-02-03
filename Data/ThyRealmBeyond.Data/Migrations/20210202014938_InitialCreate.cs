@@ -1,8 +1,9 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
-
-namespace ThyRealmBeyond.Data.Migrations
+﻿namespace ThyRealmBeyond.Data.Migrations
 {
+    using System;
+
+    using Microsoft.EntityFrameworkCore.Migrations;
+
     public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -101,7 +102,7 @@ namespace ThyRealmBeyond.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UserId = table.Column<string>(nullable: false),
                     ClaimType = table.Column<string>(nullable: true),
-                    ClaimValue = table.Column<string>(nullable: true)
+                    ClaimValue = table.Column<string>(nullable: true),
                 },
                 constraints: table =>
                 {
@@ -221,7 +222,7 @@ namespace ThyRealmBeyond.Data.Migrations
                     Capability = table.Column<int>(nullable: false),
                     Confidence = table.Column<int>(nullable: false),
                     Perception = table.Column<int>(nullable: false),
-                    UserId = table.Column<string>(nullable: false)
+                    UserId = table.Column<string>(nullable: false),
                 },
                 constraints: table =>
                 {
@@ -247,7 +248,7 @@ namespace ThyRealmBeyond.Data.Migrations
                     Type = table.Column<int>(nullable: false),
                     Description = table.Column<string>(nullable: true),
                     Points = table.Column<int>(nullable: false),
-                    CharacterId = table.Column<string>(nullable: true)
+                    CharacterId = table.Column<string>(nullable: true),
                 },
                 constraints: table =>
                 {
@@ -273,7 +274,7 @@ namespace ThyRealmBeyond.Data.Migrations
                     Type = table.Column<int>(nullable: false),
                     Description = table.Column<string>(nullable: true),
                     Points = table.Column<int>(nullable: false),
-                    CharacterId = table.Column<string>(nullable: true)
+                    CharacterId = table.Column<string>(nullable: true),
                 },
                 constraints: table =>
                 {
