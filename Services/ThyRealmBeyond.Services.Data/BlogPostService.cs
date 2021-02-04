@@ -66,6 +66,7 @@
         {
             IQueryable<BlogPost> query =
                 this.blogPostRepository.All().OrderByDescending(x => x.CreatedOn);
+
             return query.To<T>().ToList();
         }
 

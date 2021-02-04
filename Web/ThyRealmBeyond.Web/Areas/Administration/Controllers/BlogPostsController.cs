@@ -126,20 +126,21 @@
         }
 
         // GET: Administration/BlogPosts/Delete/5
-        //public async Task<IActionResult> Delete(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return this.NotFound();
-        //    }
-        //
-        //    var blogPost = await this.blogPostService.GetByIdAsync<BlogPost>(id);
-        //    if (blogPost == null)
-        //    {
-        //        return this.NotFound();
-        //    }
-        //
-        //    return this.View(blogPost);
-        //}
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return this.NotFound();
+            }
+
+            var viewModel = await this.blogPostService.GetByIdAsync<BlogPostViewModel>(id);
+
+            if (viewModel == null)
+            {
+                return this.NotFound();
+            }
+
+            return this.View(viewModel);
+        }
     }
 }
