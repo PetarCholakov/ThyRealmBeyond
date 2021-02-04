@@ -14,9 +14,9 @@
 
     public class BlogPostService : IBlogPostService
     {
-        private readonly IRepository<BlogPost> blogPostRepository;
+        private readonly IDeletableEntityRepository<BlogPost> blogPostRepository;
 
-        public BlogPostService(IRepository<BlogPost> blogPostRepository)
+        public BlogPostService(IDeletableEntityRepository<BlogPost> blogPostRepository)
         {
             this.blogPostRepository = blogPostRepository;
         }
@@ -49,6 +49,18 @@
             await this.blogPostRepository.SaveChangesAsync();
 
             return modelToUpdate.Id;
+        }
+
+        public async Task<int> DeleteAsync(int id)
+        {
+            var modelToDelete = await this.blogPostRepository
+                .All()
+                .FirstOrDefaultAsync(x => x.Id == id);
+
+            this.blogPostRepository.Delete(modelToDelete);
+            await this.blogPostRepository.SaveChangesAsync();
+
+            return modelToDelete.Id;
         }
 
         public async Task<T> GetByIdAsync<T>(int? id)
