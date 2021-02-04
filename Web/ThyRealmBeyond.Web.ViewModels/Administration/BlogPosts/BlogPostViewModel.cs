@@ -13,7 +13,7 @@
 
         public string Content { get; set; }
 
-        public string PreviewContent => this.Content.Substring(0, 200);
+        public string PreviewContent { get; set; }
 
         public DateTime CreatedOn { get; set; }
 

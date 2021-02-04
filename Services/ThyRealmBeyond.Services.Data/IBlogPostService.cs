@@ -13,8 +13,10 @@
 
         T GetByTitle<T>(string title);
 
-        Task<BlogPost> GetByIdAsync<T>(int? id);
+        Task<T> GetByIdAsync<T>(int? id);
 
         Task<int> UpdateAsync(int id, string title, string content);
+
+        bool CheckBlogPostExist(int id);
     }
 }

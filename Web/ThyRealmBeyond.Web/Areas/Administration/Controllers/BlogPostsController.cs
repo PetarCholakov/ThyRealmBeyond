@@ -3,7 +3,6 @@
     using System.Linq;
     using System.Threading.Tasks;
 
-    using AutoMapper;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.EntityFrameworkCore;
@@ -45,21 +44,12 @@
                 return this.NotFound();
             }
 
-            var blogPost = await this.blogPostService.GetByIdAsync<BlogPost>(id);
+            var viewModel = await this.blogPostService.GetByIdAsync<BlogPostViewModel>(id);
 
-            if (blogPost == null)
+            if (viewModel == null)
             {
                 return this.NotFound();
             }
-
-            var viewModel = new BlogPostViewModel
-            {
-                Id = blogPost.Id,
-                Title = blogPost.Title,
-                Content = blogPost.Content,
-                CreatedOn = blogPost.CreatedOn,
-                ModifiedOn = blogPost.ModifiedOn,
-            };
 
             return this.View(viewModel);
         }
@@ -86,7 +76,7 @@
             return this.View(inputModel);
         }
 
-        // GET: Administration/BlogPorst/Edit/id
+        // GET: Administration/BlogPost/Edit/id
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -94,18 +84,12 @@
                 return this.NotFound();
             }
 
-            var blogPost = await this.blogPostService.GetByIdAsync<BlogPost>(id);
+            var viewModel = await this.blogPostService.GetByIdAsync<BlogPostEditInputModel>(id);
 
-            if (blogPost == null)
+            if (viewModel == null)
             {
                 return this.NotFound();
             }
-
-            var viewModel = new BlogPostEditInputModel
-            {
-                Title = blogPost.Title,
-                Content = blogPost.Content,
-            };
 
             return this.View(viewModel);
         }
@@ -127,7 +111,7 @@
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (this.blogPostService.GetByIdAsync<BlogPost>(inputModel.Id) == null)
+                    if (this.blogPostService.CheckBlogPostExist(id))
                     {
                         return this.NotFound();
                     }
@@ -139,6 +123,24 @@
             }
 
             return this.RedirectToAction(nameof(this.Index));
+        }
+
+        // GET: Administration/BlogPosts/Delete/5
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return this.NotFound();
+            }
+
+            var viewModel = await this.blogPostService.GetByIdAsync<BlogPostViewModel>(id);
+
+            if (viewModel == null)
+            {
+                return this.NotFound();
+            }
+
+            return this.View(viewModel);
         }
     }
 }

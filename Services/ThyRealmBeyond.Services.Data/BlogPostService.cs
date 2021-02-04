@@ -38,7 +38,10 @@
 
         public async Task<int> UpdateAsync(int id, string title, string content)
         {
-            var modelToUpdate = await this.GetByIdAsync<BlogPost>(id);
+            var modelToUpdate = await this.blogPostRepository
+                .All()
+                .FirstOrDefaultAsync(x => x.Id == id);
+
             modelToUpdate.Title = title;
             modelToUpdate.Content = content;
 
@@ -48,11 +51,13 @@
             return modelToUpdate.Id;
         }
 
-        public async Task<BlogPost> GetByIdAsync<T>(int? id)
+        public async Task<T> GetByIdAsync<T>(int? id)
         {
             var blogPost = await this.blogPostRepository
                 .All()
-                .FirstOrDefaultAsync(bp => bp.Id == id);
+                .Where(bp => bp.Id == id)
+                .To<T>()
+                .FirstOrDefaultAsync();
 
             return blogPost;
         }
@@ -61,6 +66,7 @@
         {
             IQueryable<BlogPost> query =
                 this.blogPostRepository.All().OrderByDescending(x => x.CreatedOn);
+
             return query.To<T>().ToList();
         }
 
@@ -73,6 +79,11 @@
                 .FirstOrDefault();
 
             return blogPost;
+        }
+
+        public bool CheckBlogPostExist(int id)
+        {
+            return this.blogPostRepository.All().Any(x => x.Id == id);
         }
     }
 }

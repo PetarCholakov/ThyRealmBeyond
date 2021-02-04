@@ -6,7 +6,7 @@
     using ThyRealmBeyond.Data.Models;
     using ThyRealmBeyond.Services.Mapping;
 
-    public class BlogPostEditInputModel : IMapTo<BlogPost>
+    public class BlogPostEditInputModel : IMapTo<BlogPost>, IMapFrom<BlogPost>
     {
         [Required]
         public int Id { get; set; }
@@ -15,6 +15,7 @@
         public string Title { get; set; }
 
         [Required]
+        [MinLength(200, ErrorMessage = "Content must be at least 200 characters long.")]
         public string Content { get; set; }
     }
 }
