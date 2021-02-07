@@ -2,6 +2,7 @@
 {
     using System;
 
+    using Ganss.XSS;
     using ThyRealmBeyond.Data.Models;
     using ThyRealmBeyond.Services.Mapping;
 
@@ -13,7 +14,11 @@
 
         public string Content { get; set; }
 
+        public string SanitizedContent => new HtmlSanitizer().Sanitize(this.Content);
+
         public string PreviewContent { get; set; }
+
+        public string SanitizedPreviewContent => new HtmlSanitizer().Sanitize(this.Content);
 
         public DateTime CreatedOn { get; set; }
 
