@@ -9,13 +9,15 @@
     {
         Task<int> CreateAsync(string title, string content, string userId);
 
-        IEnumerable<T> GetAll<T>();
+        Task<int> UpdateAsync(int id, string title, string content);
 
-        T GetByTitle<T>(string title);
+        Task<int> DeleteAsync(int id);
 
         Task<T> GetByIdAsync<T>(int? id);
 
-        Task<int> UpdateAsync(int id, string title, string content);
+        IEnumerable<T> GetAll<T>();
+
+        T GetByTitle<T>(string title);
 
         bool CheckBlogPostExist(int id);
     }

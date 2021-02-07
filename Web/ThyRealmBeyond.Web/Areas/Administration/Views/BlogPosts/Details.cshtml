@@ -17,13 +17,13 @@
             @Html.DisplayNameFor(model => model.Content)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Content)
+            @Html.Raw(Model.SanitizedContent)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.PreviewContent)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.PreviewContent)
+            @Html.Raw(Model.SanitizedPreviewContent)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.CreatedOn)

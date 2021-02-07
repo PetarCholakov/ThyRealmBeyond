@@ -21,7 +21,8 @@
             {
                 Title = "First Time Test Title",
                 Content = "Emo DnD best DnD",
-                UserId = "057368c9-e018-4813-b224-88db77bdf1b5",
+                UserId = "cd474f1f-5421-411e-a3a9-80d2b1f5f2ad",
+                IsDeleted = false,
             });
         }
     }

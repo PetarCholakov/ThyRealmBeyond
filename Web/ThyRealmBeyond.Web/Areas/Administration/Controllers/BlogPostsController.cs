@@ -14,11 +14,11 @@
     [Area("Administration")]
     public class BlogPostsController : AdministrationController
     {
-        private readonly IRepository<BlogPost> repository;
+        private readonly IDeletableEntityRepository<BlogPost> repository;
         private readonly UserManager<ApplicationUser> userManager;
         private readonly IBlogPostService blogPostService;
 
-        public BlogPostsController(IRepository<BlogPost> repository, UserManager<ApplicationUser> userManager, IBlogPostService blogPostService)
+        public BlogPostsController(IDeletableEntityRepository<BlogPost> repository, UserManager<ApplicationUser> userManager, IBlogPostService blogPostService)
         {
             this.repository = repository;
             this.userManager = userManager;
@@ -141,6 +141,16 @@
             }
 
             return this.View(viewModel);
+        }
+
+        // POST: Administration/BlogPosts/Delete/id
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(int id)
+        {
+            await this.blogPostService.DeleteAsync(id);
+
+            return this.RedirectToAction(nameof(this.Index));
         }
     }
 }
