@@ -21,6 +21,36 @@
             this.blogPostRepository = blogPostRepository;
         }
 
+        public IEnumerable<T> GetAll<T>(bool includeDeletedBlogPosts)
+        {
+            IQueryable<BlogPost> query = this.blogPostRepository
+                .AllWithDeleted()
+                .OrderByDescending(x => x.CreatedOn);
+
+            if (includeDeletedBlogPosts == false)
+            {
+                query = query.Where(x => !x.IsDeleted);
+            }
+
+            return query.To<T>().ToList();
+        }
+
+        public T GetByTitle<T>(string title)
+        {
+            var blogPost = this.blogPostRepository
+                .All()
+                .Where(bp => bp.Title.Replace(" ", "-") == title.Replace(" ", "-"))
+                .To<T>()
+                .FirstOrDefault();
+
+            return blogPost;
+        }
+
+        public bool CheckBlogPostExist(int id)
+        {
+            return this.blogPostRepository.All().Any(x => x.Id == id);
+        }
+
         public async Task<int> CreateAsync(string title, string content, string userId)
         {
             var blogPost = new BlogPost
@@ -72,30 +102,6 @@
                 .FirstOrDefaultAsync();
 
             return blogPost;
-        }
-
-        public IEnumerable<T> GetAll<T>()
-        {
-            IQueryable<BlogPost> query =
-                this.blogPostRepository.All().OrderByDescending(x => x.CreatedOn);
-
-            return query.To<T>().ToList();
-        }
-
-        public T GetByTitle<T>(string title)
-        {
-            var blogPost = this.blogPostRepository
-                .All()
-                .Where(bp => bp.Title.Replace(" ", "-") == title.Replace(" ", "-"))
-                .To<T>()
-                .FirstOrDefault();
-
-            return blogPost;
-        }
-
-        public bool CheckBlogPostExist(int id)
-        {
-            return this.blogPostRepository.All().Any(x => x.Id == id);
         }
     }
 }

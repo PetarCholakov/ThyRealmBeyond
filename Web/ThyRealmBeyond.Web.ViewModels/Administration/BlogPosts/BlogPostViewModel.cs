@@ -18,9 +18,13 @@
 
         public string PreviewContent { get; set; }
 
-        public string SanitizedPreviewContent => new HtmlSanitizer().Sanitize(this.Content);
+        public string SanitizedPreviewContent => new HtmlSanitizer().Sanitize(this.PreviewContent);
 
         public DateTime CreatedOn { get; set; }
+
+        public bool IsDeleted { get; set; }
+
+        public DateTime? DeletedOn { get; set; }
 
         public DateTime? ModifiedOn { get; set; }
 
