@@ -11,7 +11,8 @@
         public string Title { get; set; }
 
         [Required]
-        [MinLength(200, ErrorMessage = "Content must be at least 200 characters long.")]
         public string Content { get; set; }
+
+        public string PreviewContent { get; set; }
     }
 }

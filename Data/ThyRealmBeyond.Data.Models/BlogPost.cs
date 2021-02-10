@@ -8,10 +8,14 @@
     {
         public string Title { get; set; }
 
+        [DataType(DataType.Html)]
         public string Content { get; set; }
 
-        public string PreviewContent => this.Content.Substring(0, 200);
+        public string PreviewContent { get; set; }
 
+        public string ImageUrl { get; set; }
+
+        [Required]
         public string UserId { get; set; }
 
         public virtual ApplicationUser User { get; set; }

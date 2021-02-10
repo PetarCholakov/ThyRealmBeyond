@@ -30,7 +30,7 @@
         public async Task<IActionResult> Index()
         {
             var result = await this.repository
-                .All()
+                .AllWithDeleted()
                 .OrderByDescending(x => x.CreatedOn)
                 .ToListAsync();
             return this.View(result);
@@ -76,7 +76,7 @@
             return this.View(inputModel);
         }
 
-        // GET: Administration/BlogPost/Edit/id
+        // GET: Administration/BlogPosts/Edit/id
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -94,6 +94,7 @@
             return this.View(viewModel);
         }
 
+        // POST: Administration/Blogposts/Edit/id
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, BlogPostEditInputModel inputModel)
