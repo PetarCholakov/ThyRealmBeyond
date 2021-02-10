@@ -7,6 +7,12 @@
 
     public interface IBlogPostService
     {
+        IEnumerable<T> GetAll<T>(bool includeDeletedBlogPosts);
+
+        T GetByTitle<T>(string title);
+
+        bool CheckBlogPostExist(int id);
+
         Task<int> CreateAsync(string title, string content, string userId);
 
         Task<int> UpdateAsync(int id, string title, string content);
@@ -14,11 +20,5 @@
         Task<int> DeleteAsync(int id);
 
         Task<T> GetByIdAsync<T>(int? id);
-
-        IEnumerable<T> GetAll<T>();
-
-        T GetByTitle<T>(string title);
-
-        bool CheckBlogPostExist(int id);
     }
 }

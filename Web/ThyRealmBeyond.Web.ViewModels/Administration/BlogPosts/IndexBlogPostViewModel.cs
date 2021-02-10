@@ -1,12 +1,12 @@
-﻿namespace ThyRealmBeyond.Web.ViewModels.Home
+﻿namespace ThyRealmBeyond.Web.ViewModels.Administration.BlogPosts
 {
     using System;
     using System.Collections.Generic;
     using System.Text;
 
-    public class IndexViewModel
+    public class IndexBlogPostViewModel
     {
-        public IEnumerable<IndexBlogPostViewModel> BlogPosts { get; set; }
+        public IEnumerable<BlogPostViewModel> BlogPosts { get; set; }
 
         public int PagesCount { get; set; }
 

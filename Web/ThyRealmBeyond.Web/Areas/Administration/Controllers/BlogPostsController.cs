@@ -1,5 +1,6 @@
 ﻿namespace ThyRealmBeyond.Web.Areas.Administration.Controllers
 {
+    using System;
     using System.Linq;
     using System.Threading.Tasks;
 
@@ -14,26 +15,31 @@
     [Area("Administration")]
     public class BlogPostsController : AdministrationController
     {
-        private readonly IDeletableEntityRepository<BlogPost> repository;
+        private const bool ShouldIncludeDeletedBlogPosts = true;
+        private const int PostsPerPageDefaultValue = 10;
         private readonly UserManager<ApplicationUser> userManager;
         private readonly IBlogPostService blogPostService;
 
-        public BlogPostsController(IDeletableEntityRepository<BlogPost> repository, UserManager<ApplicationUser> userManager, IBlogPostService blogPostService)
+        public BlogPostsController(UserManager<ApplicationUser> userManager, IBlogPostService blogPostService)
         {
-            this.repository = repository;
             this.userManager = userManager;
             this.blogPostService = blogPostService;
         }
 
         // GET: Administration/BlogPosts
-        // TODO: disconnect controller from repository
-        public async Task<IActionResult> Index()
+        public IActionResult Index(int page = 1)
         {
-            var result = await this.repository
-                .AllWithDeleted()
-                .OrderByDescending(x => x.CreatedOn)
-                .ToListAsync();
-            return this.View(result);
+            var result = this.blogPostService
+                .GetAll<BlogPostViewModel>(ShouldIncludeDeletedBlogPosts);
+
+            var viewModel = new IndexBlogPostViewModel();
+
+            viewModel.BlogPosts = result.Skip(PostsPerPageDefaultValue * (page - 1)).Take(PostsPerPageDefaultValue);
+            var count = result.Count();
+            viewModel.PagesCount = (int)Math.Ceiling((double)count / PostsPerPageDefaultValue);
+            viewModel.CurrentPage = page;
+
+            return this.View(viewModel);
         }
 
         // GET: Administration/BlogPosts/Details/id
