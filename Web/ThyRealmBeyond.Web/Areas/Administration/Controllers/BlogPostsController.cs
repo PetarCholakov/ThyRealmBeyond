@@ -7,12 +7,13 @@
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.EntityFrameworkCore;
+    using ThyRealmBeyond.Common;
     using ThyRealmBeyond.Data.Common.Repositories;
     using ThyRealmBeyond.Data.Models;
     using ThyRealmBeyond.Services.Data;
     using ThyRealmBeyond.Web.ViewModels.Administration.BlogPosts;
 
-    [Area("Administration")]
+    [Area(GlobalConstants.AdministrationAreaName)]
     public class BlogPostsController : AdministrationController
     {
         private const bool ShouldIncludeDeletedBlogPosts = true;
@@ -32,12 +33,14 @@
             var result = this.blogPostService
                 .GetAll<BlogPostViewModel>(ShouldIncludeDeletedBlogPosts);
 
-            var viewModel = new IndexBlogPostViewModel();
-
-            viewModel.BlogPosts = result.Skip(PostsPerPageDefaultValue * (page - 1)).Take(PostsPerPageDefaultValue);
             var count = result.Count();
-            viewModel.PagesCount = (int)Math.Ceiling((double)count / PostsPerPageDefaultValue);
-            viewModel.CurrentPage = page;
+
+            var viewModel = new IndexBlogPostViewModel
+            {
+                BlogPosts = result.Skip(PostsPerPageDefaultValue * (page - 1)).Take(PostsPerPageDefaultValue),
+                PagesCount = (int)Math.Ceiling((double)count / PostsPerPageDefaultValue),
+                CurrentPage = page,
+            };
 
             return this.View(viewModel);
         }

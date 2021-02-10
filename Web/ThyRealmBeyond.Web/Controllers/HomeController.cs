@@ -3,11 +3,10 @@
     using System;
     using System.Diagnostics;
     using System.Linq;
-    using Microsoft.AspNetCore.Mvc;
 
+    using Microsoft.AspNetCore.Mvc;
     using ThyRealmBeyond.Services.Data;
     using ThyRealmBeyond.Web.ViewModels;
-    using ThyRealmBeyond.Web.ViewModels.BlogPosts;
     using ThyRealmBeyond.Web.ViewModels.Home;
 
     public class HomeController : BaseController
@@ -35,7 +34,6 @@
                 PagesCount = pagesCount,
                 CurrentPage = page,
             };
-
 
             return this.View(viewModel);
         }

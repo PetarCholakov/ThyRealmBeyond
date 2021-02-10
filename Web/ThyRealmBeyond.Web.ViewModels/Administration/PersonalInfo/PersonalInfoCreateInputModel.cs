@@ -1,11 +1,11 @@
-﻿namespace ThyRealmBeyond.Web.ViewModels.Administration.BlogPosts
+﻿namespace ThyRealmBeyond.Web.ViewModels.Administration.PersonalInfo
 {
     using System.ComponentModel.DataAnnotations;
 
     using ThyRealmBeyond.Data.Models;
     using ThyRealmBeyond.Services.Mapping;
 
-    public class BlogPostCreateInputModel : IMapTo<BlogPost>
+    public class PersonalInfoCreateInputModel : IMapTo<PersonalInfo>
     {
         [Required]
         public string Title { get; set; }
@@ -14,6 +14,9 @@
         [DataType(DataType.Html)]
         public string Content { get; set; }
 
-        public string PreviewContent { get; set; }
+        public string ImageUrl { get; set; }
+
+        [EmailAddress]
+        public string Email { get; set; }
     }
 }

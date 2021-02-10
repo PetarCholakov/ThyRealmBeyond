@@ -4,15 +4,12 @@
     using System.Linq;
     using System.Threading.Tasks;
 
+    using Microsoft.EntityFrameworkCore;
+    using Moq;
     using ThyRealmBeyond.Data;
     using ThyRealmBeyond.Data.Common.Repositories;
     using ThyRealmBeyond.Data.Models;
     using ThyRealmBeyond.Data.Repositories;
-
-    using Microsoft.EntityFrameworkCore;
-
-    using Moq;
-
     using Xunit;
 
     public class SettingsServiceTests

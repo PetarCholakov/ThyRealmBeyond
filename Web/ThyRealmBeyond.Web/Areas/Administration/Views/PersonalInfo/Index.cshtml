@@ -1,0 +1,22 @@
+﻿@model ThyRealmBeyond.Web.ViewModels.PersonalInfo.PersonalInfoViewModel
+@using ThyRealmBeyond.Common
+@{
+    ViewData["Title"] = Model.Title;
+}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <p class="lh-base">
+                @Html.Raw(Model.SanitizedContent)
+            </p>            
+        </div>
+    </div>
+</div>
+<ul class="list-inline list-unstyled">
+    <li><span><i class="fa fa-calendar-alt"></i> @Model.ModifiedOn </span></li>
+</ul>
+@if (this.User.IsInRole(GlobalConstants.AdministratorRoleName))
+{
+    <li><i class="fa fa-pencil-alt"></i> <a asp-area="Administration" asp-controller="PersonalInfo" asp-action="Edit">Edit</a></li>
+}
+

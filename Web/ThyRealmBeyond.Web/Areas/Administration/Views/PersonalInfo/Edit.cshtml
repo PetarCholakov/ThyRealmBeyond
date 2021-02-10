@@ -1,11 +1,10 @@
-﻿@model ThyRealmBeyond.Web.ViewModels.Administration.BlogPosts.BlogPostCreateInputModel
+﻿@model ThyRealmBeyond.Web.ViewModels.Administration.PersonalInfo.PersonalInfoEditInputModel
+
 @{
-    ViewData["Title"] = "Create Blog Post";
+    ViewData["Title"] = "Edit About Me";
 }
 
-<h1>@this.ViewData["Title"]</h1>
-
-<script src="/lib/tinymce/tinymce.min.js" type="text/javascript" asp-append-version="true"></script>
+<script src="~/lib/tinymce/tinymce.min.js" type="text/javascript" asp-append-version="true"></script>
 <script type="text/javascript">
     tinymce.init({
         selector: "textarea",
@@ -17,19 +16,12 @@
         ]
     });
 </script>
-
-<form asp-action="Create">
+<form asp-action="Edit">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <div class="form-group">
         <label asp-for="Title" class="control-label"></label>
         <input asp-for="Title" class="form-control" />
         <span asp-validation-for="Title" class="text-danger"></span>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="PreviewContent" class="control-label"></label>
-        <input asp-for="PreviewContent" class="form-control" />
-        <span asp-validation-for="PreviewContent" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="Content" class="control-label"></label>
@@ -37,6 +29,16 @@
         <span asp-validation-for="Content" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <input type="submit" value="Create" class="btn btn-primary" /> | <a asp-action="Index">Back</a>
+        <label asp-for="ImageUrl" class="control-label"></label>
+        <input asp-for="ImageUrl" class="form-control" />
+        <span asp-validation-for="ImageUrl" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email" class="control-label"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-primary" /> | <a asp-action="Index">Back</a>
     </div>
 </form>
