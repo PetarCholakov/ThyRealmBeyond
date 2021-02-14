@@ -14,6 +14,8 @@
         [DataType(DataType.Html)]
         public string Content { get; set; }
 
+        [Required]
+        [DataType(DataType.Html)]
         public string PreviewContent { get; set; }
     }
 }

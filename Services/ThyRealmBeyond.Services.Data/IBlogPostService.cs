@@ -13,9 +13,9 @@
 
         bool CheckBlogPostExist(int id);
 
-        Task<int> CreateAsync(string title, string content, string userId);
+        Task<int> CreateAsync(string title, string content, string userId, string previewContent);
 
-        Task<int> UpdateAsync(int id, string title, string content);
+        Task<int> UpdateAsync(int id, string title, string content, string previewContent);
 
         Task<int> DeleteAsync(int id);
 

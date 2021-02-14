@@ -170,12 +170,12 @@ img::-moz-selection {
 }
 
 header.masthead {
-  margin-bottom: 50px;
-  background: no-repeat center center;
-  background-color: #868e96;
-  background-attachment: scroll;
-  position: relative;
-  background-size: cover;
+    margin-bottom: 30px;
+    background: no-repeat center center;
+    background-color: #868e96;
+    background-attachment: scroll;
+    position: relative;
+    background-size: cover;
 }
 
 header.masthead .overlay {
@@ -272,10 +272,10 @@ header.masthead .post-heading .meta a {
   color: #212529;
 }
 
-.post-preview > a:focus, .post-preview > a:hover {
-  text-decoration: none;
-  color: #0085A1;
-}
+    .post-preview > a:focus, .post-preview > a:hover {
+        text-decoration: none;
+        color: #808080;
+    }
 
 .post-preview > a > .post-title {
   font-size: 30px;
@@ -295,15 +295,15 @@ header.masthead .post-heading .meta a {
   color: #868e96;
 }
 
-.post-preview > .post-meta > a {
-  text-decoration: none;
-  color: #212529;
-}
+    .post-preview > .post-meta > a {
+        text-decoration: none;
+        color: #808080;
+    }
 
-.post-preview > .post-meta > a:focus, .post-preview > .post-meta > a:hover {
-  text-decoration: underline;
-  color: #0085A1;
-}
+        .post-preview > .post-meta > a:focus, .post-preview > .post-meta > a:hover {
+            text-decoration: underline;
+            color: #990000;
+        }
 
 @media only screen and (min-width: 768px) {
   .post-preview > a > .post-title {
@@ -333,11 +333,11 @@ header.masthead .post-heading .meta a {
   font-family: 'Lora', 'Times New Roman', serif;
 }
 
-.floating-label-form-group input::-webkit-input-placeholder,
-.floating-label-form-group textarea::-webkit-input-placeholder {
-  color: #868e96;
-  font-family: 'Lora', 'Times New Roman', serif;
-}
+    .floating-label-form-group input::-webkit-input-placeholder,
+    .floating-label-form-group textarea::-webkit-input-placeholder {
+        color: #808080;
+        font-family: 'Lora', 'Times New Roman', serif;
+    }
 
 .floating-label-form-group label {
   font-size: 0.85em;
@@ -361,7 +361,7 @@ header.masthead .post-heading .meta a {
 }
 
 .floating-label-form-group-with-focus label {
-  color: #0085A1;
+    color: #808080;
 }
 
 form .form-group:first-child .floating-label-form-group {
@@ -394,15 +394,15 @@ footer .copyright {
 }
 
 .btn-primary {
-  background-color: #0085A1;
-  border-color: #0085A1;
+    background-color: #808080;
+    border-color: #808080;
 }
 
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-  color: #fff;
-  background-color: #00657b !important;
-  border-color: #00657b !important;
-}
+    .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+        color: #fff;
+        background-color: #990000 !important;
+        border-color: #990000 !important;
+    }
 
 .btn-lg {
   font-size: 16px;

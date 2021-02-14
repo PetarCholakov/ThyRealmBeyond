@@ -78,7 +78,7 @@
 
             if (this.ModelState.IsValid)
             {
-                await this.blogPostService.CreateAsync(inputModel.Title, inputModel.Content, user.Id);
+                await this.blogPostService.CreateAsync(inputModel.Title, inputModel.Content, user.Id, inputModel.PreviewContent);
                 return this.RedirectToAction(nameof(this.Index));
             }
 
@@ -117,7 +117,7 @@
             {
                 try
                 {
-                    await this.blogPostService.UpdateAsync(inputModel.Id, inputModel.Title, inputModel.Content);
+                    await this.blogPostService.UpdateAsync(inputModel.Id, inputModel.Title, inputModel.Content, inputModel.PreviewContent);
                 }
                 catch (DbUpdateConcurrencyException)
                 {

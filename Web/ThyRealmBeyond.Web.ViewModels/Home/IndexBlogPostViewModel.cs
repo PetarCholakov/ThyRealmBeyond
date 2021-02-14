@@ -4,6 +4,7 @@
     using System.Net;
     using System.Text.RegularExpressions;
 
+    using Ganss.XSS;
     using ThyRealmBeyond.Data.Models;
     using ThyRealmBeyond.Services.Mapping;
 
@@ -15,16 +16,9 @@
 
         public string Content { get; set; }
 
-        public string PreviewContent
-        {
-            get
-            {
-                var content = WebUtility.HtmlDecode(Regex.Replace(this.Content, @"<[^>]+>", string.Empty));
-                return content.Length > 300
-                        ? content.Substring(0, 300) + "..."
-                        : content;
-            }
-        }
+        public string PreviewContent { get; set; }
+
+        public string SanitizedPreviewContent => new HtmlSanitizer().Sanitize(this.PreviewContent);
 
         public string Url => $"/{this.Title.Replace(' ', '-')}";
 

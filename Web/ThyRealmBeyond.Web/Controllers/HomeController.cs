@@ -8,16 +8,19 @@
     using ThyRealmBeyond.Services.Data;
     using ThyRealmBeyond.Web.ViewModels;
     using ThyRealmBeyond.Web.ViewModels.Home;
+    using ThyRealmBeyond.Web.ViewModels.PersonalInfo;
 
     public class HomeController : BaseController
     {
         private const bool ShouldIncludeDeletedBlogPosts = false;
-        private const int BlogPostsPerPageDefault = 5;
+        private const int BlogPostsPerPageDefault = 3;
         private readonly IBlogPostService blogPostService;
+        private readonly IPersonalInfoService personalInfoService;
 
-        public HomeController(IBlogPostService blogPostService)
+        public HomeController(IBlogPostService blogPostService, IPersonalInfoService personalInfoService)
         {
             this.blogPostService = blogPostService;
+            this.personalInfoService = personalInfoService;
         }
 
         public IActionResult Index(int page = 1)
@@ -36,6 +39,13 @@
             };
 
             return this.View(viewModel);
+        }
+
+        public IActionResult AboutMe()
+        {
+            var aboutMePost = this.personalInfoService.GetPersonalInfo<PersonalInfoViewModel>();
+
+            return this.View(aboutMePost);
         }
 
         public IActionResult Privacy()
