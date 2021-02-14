@@ -16,7 +16,6 @@
     [Area(GlobalConstants.AdministrationAreaName)]
     public class BlogPostsController : AdministrationController
     {
-        private const bool ShouldIncludeDeletedBlogPosts = true;
         private const int PostsPerPageDefaultValue = 10;
         private readonly UserManager<ApplicationUser> userManager;
         private readonly IBlogPostService blogPostService;
@@ -31,7 +30,7 @@
         public IActionResult Index(int page = 1)
         {
             var result = this.blogPostService
-                .GetAll<BlogPostViewModel>(ShouldIncludeDeletedBlogPosts);
+                .GetAll<BlogPostViewModel>();
 
             var count = result.Count();
 

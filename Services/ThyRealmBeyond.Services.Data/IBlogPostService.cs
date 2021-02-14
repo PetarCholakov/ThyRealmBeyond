@@ -7,7 +7,7 @@
 
     public interface IBlogPostService
     {
-        IEnumerable<T> GetAll<T>(bool includeDeletedBlogPosts);
+        IEnumerable<T> GetAll<T>();
 
         T GetByTitle<T>(string title);
 

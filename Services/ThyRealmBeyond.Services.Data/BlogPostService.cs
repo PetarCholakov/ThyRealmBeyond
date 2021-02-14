@@ -21,16 +21,11 @@
             this.blogPostRepository = blogPostRepository;
         }
 
-        public IEnumerable<T> GetAll<T>(bool includeDeletedBlogPosts)
+        public IEnumerable<T> GetAll<T>()
         {
             IQueryable<BlogPost> query = this.blogPostRepository
-                .AllWithDeleted()
+                .All()
                 .OrderByDescending(x => x.CreatedOn);
-
-            if (includeDeletedBlogPosts == false)
-            {
-                query = query.Where(x => !x.IsDeleted);
-            }
 
             return query.To<T>().ToList();
         }

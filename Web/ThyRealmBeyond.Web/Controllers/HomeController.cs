@@ -26,7 +26,7 @@
         public IActionResult Index(int page = 1)
         {
             var result = this.blogPostService
-                .GetAll<IndexBlogPostViewModel>(ShouldIncludeDeletedBlogPosts);
+                .GetAll<IndexBlogPostViewModel>();
 
             var count = result.Count();
             var pagesCount = (int)Math.Ceiling((double)count / BlogPostsPerPageDefault);

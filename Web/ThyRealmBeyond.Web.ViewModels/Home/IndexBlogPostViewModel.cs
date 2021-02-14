@@ -20,6 +20,8 @@
 
         public string SanitizedPreviewContent => new HtmlSanitizer().Sanitize(this.PreviewContent);
 
+        public string ImageUrl { get; set; }
+
         public string Url => $"/{this.Title.Replace(' ', '-')}";
 
         public DateTime CreatedOn { get; set; }
