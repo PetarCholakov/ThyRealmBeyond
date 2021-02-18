@@ -4,6 +4,8 @@
     {
         public const string SystemName = "ThyRealmBeyond";
 
+        public const string AdministrationAreaName = "Administration";
+
         public const string AdministratorRoleName = "Administrator";
 
         public const string AdministratorUsername = "adminfail@gmail.com";

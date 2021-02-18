@@ -28,6 +28,8 @@
 
         public DbSet<BlogPost> BlogPosts { get; set; }
 
+        public DbSet<PersonalInfo> PersonalInfos { get; set; }
+
         public DbSet<Character> Characters { get; set; }
 
         public DbSet<Specialty> Specialties { get; set; }

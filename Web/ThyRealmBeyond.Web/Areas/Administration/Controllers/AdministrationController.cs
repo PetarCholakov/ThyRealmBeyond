@@ -6,7 +6,7 @@
     using ThyRealmBeyond.Web.Controllers;
 
     [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
-    [Area("Administration")]
+    [Area(GlobalConstants.AdministrationAreaName)]
     public class AdministrationController : BaseController
     {
     }

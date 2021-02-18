@@ -7,15 +7,15 @@
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.EntityFrameworkCore;
+    using ThyRealmBeyond.Common;
     using ThyRealmBeyond.Data.Common.Repositories;
     using ThyRealmBeyond.Data.Models;
     using ThyRealmBeyond.Services.Data;
     using ThyRealmBeyond.Web.ViewModels.Administration.BlogPosts;
 
-    [Area("Administration")]
+    [Area(GlobalConstants.AdministrationAreaName)]
     public class BlogPostsController : AdministrationController
     {
-        private const bool ShouldIncludeDeletedBlogPosts = true;
         private const int PostsPerPageDefaultValue = 10;
         private readonly UserManager<ApplicationUser> userManager;
         private readonly IBlogPostService blogPostService;
@@ -30,14 +30,16 @@
         public IActionResult Index(int page = 1)
         {
             var result = this.blogPostService
-                .GetAll<BlogPostViewModel>(ShouldIncludeDeletedBlogPosts);
+                .GetAll<BlogPostViewModel>();
 
-            var viewModel = new IndexBlogPostViewModel();
-
-            viewModel.BlogPosts = result.Skip(PostsPerPageDefaultValue * (page - 1)).Take(PostsPerPageDefaultValue);
             var count = result.Count();
-            viewModel.PagesCount = (int)Math.Ceiling((double)count / PostsPerPageDefaultValue);
-            viewModel.CurrentPage = page;
+
+            var viewModel = new IndexBlogPostViewModel
+            {
+                BlogPosts = result.Skip(PostsPerPageDefaultValue * (page - 1)).Take(PostsPerPageDefaultValue),
+                PagesCount = (int)Math.Ceiling((double)count / PostsPerPageDefaultValue),
+                CurrentPage = page,
+            };
 
             return this.View(viewModel);
         }
@@ -75,7 +77,7 @@
 
             if (this.ModelState.IsValid)
             {
-                await this.blogPostService.CreateAsync(inputModel.Title, inputModel.Content, user.Id);
+                await this.blogPostService.CreateAsync(inputModel.Title, inputModel.Content, user.Id, inputModel.PreviewContent);
                 return this.RedirectToAction(nameof(this.Index));
             }
 
@@ -114,7 +116,7 @@
             {
                 try
                 {
-                    await this.blogPostService.UpdateAsync(inputModel.Id, inputModel.Title, inputModel.Content);
+                    await this.blogPostService.UpdateAsync(inputModel.Id, inputModel.Title, inputModel.Content, inputModel.PreviewContent);
                 }
                 catch (DbUpdateConcurrencyException)
                 {

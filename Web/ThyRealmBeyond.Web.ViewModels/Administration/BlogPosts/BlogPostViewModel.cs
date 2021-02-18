@@ -20,6 +20,8 @@
 
         public string SanitizedPreviewContent => new HtmlSanitizer().Sanitize(this.PreviewContent);
 
+        public string ImageUrl { get; set; }
+
         public DateTime CreatedOn { get; set; }
 
         public bool IsDeleted { get; set; }

@@ -11,8 +11,13 @@
         public string Title { get; set; }
 
         [Required]
+        [DataType(DataType.Html)]
         public string Content { get; set; }
 
+        [Required]
+        [DataType(DataType.Html)]
         public string PreviewContent { get; set; }
+
+        public string ImageUrl { get; set; }
     }
 }

@@ -21,16 +21,11 @@
             this.blogPostRepository = blogPostRepository;
         }
 
-        public IEnumerable<T> GetAll<T>(bool includeDeletedBlogPosts)
+        public IEnumerable<T> GetAll<T>()
         {
             IQueryable<BlogPost> query = this.blogPostRepository
-                .AllWithDeleted()
+                .All()
                 .OrderByDescending(x => x.CreatedOn);
-
-            if (includeDeletedBlogPosts == false)
-            {
-                query = query.Where(x => !x.IsDeleted);
-            }
 
             return query.To<T>().ToList();
         }
@@ -51,13 +46,14 @@
             return this.blogPostRepository.All().Any(x => x.Id == id);
         }
 
-        public async Task<int> CreateAsync(string title, string content, string userId)
+        public async Task<int> CreateAsync(string title, string content, string userId, string previewContent)
         {
             var blogPost = new BlogPost
             {
                 Title = title,
                 Content = content,
                 UserId = userId,
+                PreviewContent = previewContent,
             };
 
             await this.blogPostRepository.AddAsync(blogPost);
@@ -66,7 +62,7 @@
             return blogPost.Id;
         }
 
-        public async Task<int> UpdateAsync(int id, string title, string content)
+        public async Task<int> UpdateAsync(int id, string title, string content, string previewContent)
         {
             var modelToUpdate = await this.blogPostRepository
                 .All()
@@ -74,6 +70,7 @@
 
             modelToUpdate.Title = title;
             modelToUpdate.Content = content;
+            modelToUpdate.PreviewContent = previewContent;
 
             this.blogPostRepository.Update(modelToUpdate);
             await this.blogPostRepository.SaveChangesAsync();

@@ -11,6 +11,7 @@
         [DataType(DataType.Html)]
         public string Content { get; set; }
 
+        [DataType(DataType.Html)]
         public string PreviewContent { get; set; }
 
         public string ImageUrl { get; set; }

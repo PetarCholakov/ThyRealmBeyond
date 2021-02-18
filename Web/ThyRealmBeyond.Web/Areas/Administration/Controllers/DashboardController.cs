@@ -5,11 +5,8 @@
 
     public class DashboardController : AdministrationController
     {
-        private readonly IBlogPostService blogPostService;
-
         public DashboardController(IBlogPostService blogPostService)
         {
-            this.blogPostService = blogPostService;
         }
 
         public IActionResult Index()

@@ -5,6 +5,11 @@
     using System.IO;
     using System.Threading.Tasks;
 
+    using CommandLine;
+    using Microsoft.EntityFrameworkCore;
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.Logging;
     using ThyRealmBeyond.Data;
     using ThyRealmBeyond.Data.Common;
     using ThyRealmBeyond.Data.Common.Repositories;
@@ -13,13 +18,6 @@
     using ThyRealmBeyond.Data.Seeding;
     using ThyRealmBeyond.Services.Data;
     using ThyRealmBeyond.Services.Messaging;
-
-    using CommandLine;
-
-    using Microsoft.EntityFrameworkCore;
-    using Microsoft.Extensions.Configuration;
-    using Microsoft.Extensions.DependencyInjection;
-    using Microsoft.Extensions.Logging;
 
     public static class Program
     {
